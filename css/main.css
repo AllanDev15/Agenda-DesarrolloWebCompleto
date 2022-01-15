@@ -1,0 +1,233 @@
+:root {
+    --primario: #C2185B;
+    --primarioOscuro: rgb(156, 10, 69);
+    --secundario: #FFC107;
+    --fuentePrimaria: 'Arial', Helvetica, sans-serif;
+    --fuenteSecundaria: font-family: 'Poppins', sans-serif;
+}
+
+html {
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-size: 14px;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: var(--primario);
+    font-family: var(--fuentePrimaria);
+}
+h1, h2 {
+    font-family: var(--fuenteSecundaria);
+    text-align: center;
+    margin: 0;
+}
+h1 {
+    padding: 20px;
+    color: white;
+}
+h2 {
+    font-size: 2rem;
+    color: var(--primario);
+}
+.contenedor-barra {
+    background-color: var(--primarioOscuro);
+}
+.barra {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    align-items: center;
+}
+.bg-amarillo {
+    background-color: var(--secundario);
+}
+.bg-blanco {
+    background-color: white;
+}
+.sombra {
+    -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.6);
+    -moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.6);
+    box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.6);
+}
+.contenedor {
+    max-width: 1100px;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+.boton {
+    font-size: 2rem;
+    text-decoration: none;
+}
+.boton:hover {
+    cursor: pointer;
+}
+.btn-editar {
+    color: var(--secundario);
+}
+.btn-borrar {
+    color: var(--primario);
+}
+.volver {
+    background-color: var(--secundario);
+    border-radius: 5px;
+    text-align: center;
+    color: black;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+}
+/* Javascript Elements */
+.notificacion {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    padding: 1rem 3rem;
+    opacity: 0;
+    transition: opacity .5s ease;
+}
+.visible {
+    opacity: 1;
+}
+.error {
+    background-color: rgb(238, 148, 166);
+    color: rgb(163, 0, 33);
+}
+.correcto {
+    background-color: rgb(179, 241, 117);
+    color: green;
+}
+
+form {
+    padding: 3rem;
+    margin-top: 2rem;
+}
+form legend {
+    font-family: var(--fuenteSecundaria);
+    font-size: 2rem;
+    text-align: center;
+    width: 100%;
+}
+form legend span {
+    font-size: 1rem;
+    margin: 1rem 0 0 0;
+    display: block;
+}
+.campos {
+    margin: 2rem 0 0 0;
+}
+.campo {
+    padding: .5rem 0;
+}
+.campo label {
+    font-size: 1.2rem;
+    display: block;
+}
+
+.campo input[type="text"],
+.campo input[type="tel"] {
+    width: 100%;
+    border: none;
+    padding: .5rem;
+    height: 2.8rem;
+    margin-top: .5rem;
+    font-size: 1.2rem;
+}
+.campo.enviar {
+    display: flex;
+    justify-content: flex-end;
+}
+.campo input[type="submit"] {
+    background-color: var(--primario);
+    border: none;
+    color: white;
+    padding: 1rem 4rem;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    transition: background-color .5s ease-in-out;
+    flex: 1;
+}
+.campo input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: var(--primarioOscuro);
+}
+
+
+.contactos {
+    padding: 1.0714rem;
+    margin-top: 3rem;
+}
+.contenedor-contactos {
+    max-width: 800px;
+    margin: 4rem auto 0 auto;
+}
+.buscador {
+    width: 100%;
+    height: 4rem;
+    padding: 1rem;
+    border: 1px solid #E1E1E1;
+    margin: 2rem 0;
+    -webkit-box-shadow: 0px 2px 15px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 2px 15px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 2px 15px 0px rgba(0,0,0,0.3);
+}
+.total-contactos {
+    font-family: var(--fuenteSecundaria);
+    margin: 2rem 0;
+    text-align: center;
+    color: var(--primario);
+    font-size: 2rem;
+}
+.total-contactos span {
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+
+/* .contenedor-tabla {
+    overflow: scroll;
+} */
+.listado-contactos {
+    width: 100%;
+    margin-top: 1rem;
+    border-collapse: collapse;
+}
+.listado-contactos thead {
+    background-color: var(--primario);
+    color: white;
+    text-transform: uppercase;
+}
+.listado-contactos thead th {
+    padding: 1rem 0;
+}
+.listado-contactos tbody td {
+    padding: 0.5rem;
+}
+.listado-contactos tbody td:nth-child(4) {
+    text-align: center;
+}
+
+.listado-contactos button{
+    background-color: transparent;
+    border: none;
+}
+
+
+@media(min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+    .campos {
+        display: flex;
+        justify-content: space-between;
+    }
+    .campo {
+        flex: 0 0 calc(33.33% - 1rem);
+    }
+    .campo input[type="submit"] {
+        flex: 0 0 auto;
+    }
+}
+
+
